@@ -1,26 +1,53 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/2.0/configuration-reference
-version: 2.1
+<h1>Привет Андрею и Соне!</h1>
+<br>
+<script type="text/javascript">
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
-jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    steps:
-      - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
+<!-- Begin
+function Encrypt(theText) {
+output = new String;
+Temp = new Array();
+Temp2 = new Array();
+TextSize = theText.length;
+for (i = 0; i < TextSize; i++) {
+	rnd = Math.round(Math.random() * 122) + 68;
+	Temp[i] = theText.charCodeAt(i) + rnd;
+	Temp2[i] = rnd;
+}
+for (i = 0; i < TextSize; i++) {
+	output += String.fromCharCode(Temp[i], Temp2[i]);
+}
+return output;
+}
+function unEncrypt(theText) {
+output = new String;
+Temp = new Array();
+Temp2 = new Array();
+TextSize = theText.length;
+for (i = 0; i < TextSize; i++) {
+	Temp[i] = theText.charCodeAt(i);
+	Temp2[i] = theText.charCodeAt(i + 1);
+}
+for (i = 0; i < TextSize; i = i+2) {
+	output += String.fromCharCode(Temp[i] - Temp2[i]);
+}
+return output;
+}
+//  End -->
+</script>
+
+<form name=encform onsubmit="return false;">
+<p>
+<textarea name=box1 rows=5 cols=80>Сюда писать текст для зашифровки</textarea>
+<p>
+<input type=button value="Зашифровать" onClick="this.form.box2.value=Encrypt(this.form.box1.value);">
+<br><p>
+<textarea name=box2 rows=5 cols=80>Здесь будет зашифрованный текст//Сюда зашифрованный текст для расшифровки</textarea>
+<p>
+<input type=button value="расшифровать" onClick="this.form.box3.value=unEncrypt(this.form.box2.value);">
+<br><p>
+<textarea name=box3 rows=5 cols=80>здесь будет ваш расшифрованный текст</textarea>
+</form>
+
